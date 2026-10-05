@@ -26,6 +26,25 @@ a{color:inherit}
 img.brand-mark{width:40px;height:40px;border-radius:50%;object-fit:cover;display:block;
   border:2px solid var(--gold);box-shadow:0 4px 14px rgba(231,195,111,.35);transform:translateZ(0)}
 .brand-name{font-family:var(--font-d);font-size:1.35rem;letter-spacing:.04em}
+
+/* ---------- faq ---------- */
+.faq{max-width:44rem;margin:0 auto;text-align:left;display:grid;gap:12px}
+.faq details{border:1px solid var(--line);border-radius:14px;background:rgba(231,195,111,.04);
+  padding:18px 22px;transition:border-color .3s,background .3s}
+.faq details[open]{border-color:rgba(231,195,111,.45);background:rgba(231,195,111,.07)}
+.faq summary{cursor:pointer;font-family:var(--font-d);font-size:1.08rem;letter-spacing:.02em;list-style:none;
+  display:flex;align-items:center;justify-content:space-between;gap:16px}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";font-size:1.4rem;color:var(--gold);line-height:1;flex:none;transition:transform .3s}
+.faq details[open] summary::after{transform:rotate(45deg)}
+.faq details p{color:var(--muted);margin:12px 0 2px;line-height:1.65}
+
+/* ---------- testimonials (quotes go live when he sends them) ---------- */
+.quote-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:34px}
+@media(max-width:900px){.quote-grid{grid-template-columns:1fr}}
+.quote-card{border:1px solid var(--line);border-radius:16px;padding:26px;background:rgba(231,195,111,.04)}
+.quote-card p{font-family:var(--font-d);font-style:italic;font-size:1.05rem;line-height:1.6;margin-bottom:14px}
+.quote-card cite{color:var(--gold);font-style:normal;letter-spacing:.08em;text-transform:uppercase;font-size:.82rem}
 .nav-links{display:flex;gap:6px;align-items:center}
 .nav-links a{text-decoration:none;color:var(--muted);padding:9px 15px;border-radius:999px;font-size:.92rem;
   letter-spacing:.06em;text-transform:uppercase;transition:color .25s,background .25s,transform .25s}
