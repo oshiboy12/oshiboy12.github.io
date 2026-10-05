@@ -59,6 +59,17 @@
     });
   }
 
+  /* recipe read toggle */
+  document.querySelectorAll("[data-recipe-toggle]").forEach(function(btn){
+    btn.addEventListener("click", function(){
+      var t = document.querySelector(btn.getAttribute("data-recipe-toggle"));
+      if (!t) return;
+      var open = t.classList.toggle("open");
+      btn.textContent = open ? "Hide the recipe" : "Read the recipe";
+      if (open) setTimeout(function(){ t.scrollIntoView({ behavior: "smooth", block: "start" }); }, 60);
+    });
+  });
+
   /* reveal on scroll */
   var io = new IntersectionObserver(function(entries){
     entries.forEach(function(en){
