@@ -181,6 +181,9 @@
 .sample-card.tilt-3d{border-radius:6px}
 .book-feature img.tilt-3d,.plating img.tilt-3d{border-radius:6px}
 .about-portrait{width:100%;max-width:380px;border-radius:8px;margin-top:30px;box-shadow:0 24px 60px rgba(18,30,22,.25);display:block}
+/* centered sections: no more blank left column */
+#books.intro,#classes.intro,#recipes.intro,#contact.intro{grid-template-columns:1fr;max-width:940px}
+#books.intro>div:first-child,#classes.intro>div:first-child,#recipes.intro>div:first-child,#contact.intro>div:first-child{margin-bottom:6px}
 .recipe-sheet{display:none;margin-top:26px;border:1px solid rgba(123,34,49,.45);border-radius:8px;background:rgba(250,246,238,.7);padding:clamp(24px,4vw,46px);box-shadow:var(--shadow)}
 .recipe-sheet.open{display:block}
 .recipe-sheet .rkicker{font:500 10px "DM Mono",monospace;text-transform:uppercase;letter-spacing:.2em;color:var(--wine);margin-bottom:10px}
@@ -326,7 +329,6 @@ footer a{color:var(--wine)}
 </div>
 <div class="recog">
 <div class="tilt-3d"><h4>Published October 2026</h4><p>Paperback and Kindle, live on Amazon worldwide.</p></div>
-<div class="tilt-3d"><h4>Co-author, 2024</h4><p><em>Nature of Cultural Tourism</em> — a tourism textbook with Y K Publishers.</p></div>
 </div>
 <div class="coming tilt-3d">
 <div class="section-tag">Coming soon</div>
