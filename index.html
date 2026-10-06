@@ -440,7 +440,13 @@
       .scroll-cue::after { animation:none; }
       .chapter, .reveal, .recipe-image img, .button { transition:none; }
     }
-  </style>
+  
+/* mobile overflow fix — edition-note (The Discipline) was bleeding past viewport */
+html,body{overflow-x:clip}
+@supports not (overflow:clip){html,body{overflow-x:hidden}}
+.edition-note>*{min-width:0}
+@media (max-width:840px){.edition-note blockquote{font-size:clamp(30px,9.5vw,46px)}}
+</style>
 </head>
 <body>
   <nav class="site-nav" id="siteNav" aria-label="Primary navigation">
