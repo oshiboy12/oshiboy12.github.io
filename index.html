@@ -132,10 +132,6 @@
     .sample-open-button::after { content:" →"; color:var(--gold); }
     .sample-open-button:hover, .sample-open-button:focus-visible { color:var(--gold); outline:none; }
     .next-book { margin-top:28px; padding:22px 0 0; border-top:1px solid rgba(17,36,28,.18); }
-    .next-book-lead { display:grid; grid-template-columns:minmax(0,1.08fr) minmax(150px,.92fr); gap:24px; align-items:end; }
-    .next-book-visual { position:relative; margin:0; overflow:hidden; aspect-ratio:4/3; background:var(--emerald-950); }
-    .next-book-visual::after { content:""; position:absolute; inset:0; box-shadow:inset 0 0 0 1px rgba(201,168,92,.3); pointer-events:none; }
-    .next-book-visual img { width:100%; height:100%; object-fit:cover; object-position:center; }
     .next-book small { color:var(--gold); font-size:9px; font-weight:600; letter-spacing:.17em; text-transform:uppercase; }
     .next-book h3 { margin:7px 0 8px; font-size:28px; line-height:1.08; }
     .next-book p { margin:0; font-size:13px; line-height:1.6; }
@@ -407,8 +403,6 @@
       .button-row .button { width:100%; }
       .sample-callout { grid-template-columns:auto 1fr; }
       .sample-open-button { grid-column:1/-1; }
-      .next-book-lead { grid-template-columns:1fr; gap:18px; }
-      .next-book-visual { order:-1; aspect-ratio:16/10; }
       .notify-form { grid-template-columns:1fr; }
       .notify-form .button { width:100%; }
       .recipe-grid { grid-template-columns:1fr; gap:38px; }
@@ -446,17 +440,13 @@
       .scroll-cue::after { animation:none; }
       .chapter, .reveal, .recipe-image img, .button { transition:none; }
     }
-
-    html,body{overflow-x:clip}
-    @supports not (overflow:clip){html,body{overflow-x:hidden}}
-    .edition-note>*{min-width:0}
-    @media (max-width:840px){
-      .edition-note{width:100%;max-width:100vw;grid-template-columns:minmax(0,1fr);overflow:hidden}
-      .discipline-copy{width:100%;max-width:100%}
-      .discipline-copy>*{max-width:100%}
-      .edition-note blockquote{font-size:clamp(30px,9.5vw,46px)}
-    }
-  </style>
+  
+/* mobile overflow fix — edition-note (The Discipline) was bleeding past viewport */
+html,body{overflow-x:clip}
+@supports not (overflow:clip){html,body{overflow-x:hidden}}
+.edition-note>*{min-width:0}
+@media (max-width:840px){.edition-note blockquote{font-size:clamp(30px,9.5vw,46px)}}
+</style>
 </head>
 <body>
   <nav class="site-nav" id="siteNav" aria-label="Primary navigation">
@@ -545,16 +535,9 @@
           <button class="sample-open-button" id="sampleOpen" type="button">Read sample here</button>
         </aside>
         <div class="next-book">
-          <div class="next-book-lead">
-            <div>
-              <small>Next volume · In development</small>
-              <h3>The Oven Doesn’t Lie</h3>
-              <p>A philosophy of baking about judgement, discipline and what the craft teaches when we stop treating the oven as a mystery.</p>
-            </div>
-            <figure class="next-book-visual">
-              <img src="assets/images/book2-oven.jpg" alt="Black-gloved pastry chef sliding a baking tray into an amber-lit oven">
-            </figure>
-          </div>
+          <small>Next volume · In development</small>
+          <h3>The Oven Doesn’t Lie</h3>
+          <p>A philosophy of baking about judgement, discipline and what the craft teaches when we stop treating the oven as a mystery.</p>
           <form class="notify-form" id="bookNotifyForm" action="https://api.web3forms.com/submit" method="post" novalidate>
             <input type="hidden" name="access_key" value="5749423c-d09c-4f48-922c-605d85f4ea6a">
             <input type="hidden" name="subject" value="Book 2 notification request">
@@ -663,6 +646,11 @@
       </figure>
       <div class="recipe-grid" aria-label="All recipes">
         <figure class="recipe-card reveal">
+          <div class="recipe-image"><img src="assets/images/img-snickerdoodle.jpg" alt="Eggless gourmet snickerdoodle cookies with cinnamon-sugar crackle, held in a black-gloved hand"></div>
+          <figcaption><small>Brown butter · Cinnamon sugar</small><h3>Snickerdoodle Cookies</h3><span class="read-label">Read full recipe</span></figcaption>
+          <button class="recipe-hit" type="button" data-recipe="recipe-snickerdoodle" aria-haspopup="dialog"><span class="sr-only">Open the Snickerdoodle Cookies recipe</span></button>
+        </figure>
+        <figure class="recipe-card reveal">
           <div class="recipe-image"><img src="assets/images/img-03.jpg" alt="Eggless gelatin-free gourmet chocolate mousse plated with berries and chocolate garnish"></div>
           <figcaption><small>Silky &amp; airy</small><h3>Gourmet Chocolate Mousse</h3><span class="read-label">Read full recipe</span></figcaption>
           <button class="recipe-hit" type="button" data-recipe="mousse-recipe" aria-haspopup="dialog"><span class="sr-only">Open the Gourmet Chocolate Mousse recipe</span></button>
@@ -687,11 +675,6 @@
           <figcaption><small>Dark &amp; theatrical</small><h3>Chocolate Candle Cake</h3><span class="read-label">Read full recipe</span></figcaption>
           <button class="recipe-hit" type="button" data-recipe="recipe-halloween-candle-cake" aria-haspopup="dialog"><span class="sr-only">Open the Chocolate Candle Cake recipe</span></button>
         </figure>
-        <figure class="recipe-card reveal">
-          <div class="recipe-image"><img src="assets/images/recipe-pumpkin-cupcakes.jpg" alt="Eggless pumpkin double-chocolate cupcake with pumpkin-spice buttercream and dark chocolate chips"></div>
-          <figcaption><small>Spiced &amp; chocolatey</small><h3>Pumpkin Double-Chocolate Cupcakes</h3><span class="read-label">Read full recipe</span></figcaption>
-          <button class="recipe-hit" type="button" data-recipe="recipe-pumpkin-cupcakes" aria-haspopup="dialog"><span class="sr-only">Open the Pumpkin Double-Chocolate Cupcakes recipe</span></button>
-        </figure>
       </div>
       <div class="recipe-action reveal"><button class="button" id="browseRecipes" type="button">Explore all recipes <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h13M13 6l6 6-6 6"/></svg></button></div>
     </section>
@@ -708,6 +691,11 @@
             <p>Choose any recipe to open its complete ingredients, method and professional notes.</p>
           </div>
           <div class="recipe-archive-grid">
+            <article class="archive-recipe">
+              <img src="assets/images/img-snickerdoodle.jpg" alt="Eggless gourmet snickerdoodle cookies with cinnamon-sugar crackle">
+              <div class="archive-recipe-copy"><small>Brown butter &amp; cinnamon sugar</small><h3>Snickerdoodle Cookies</h3><span>Read full recipe</span></div>
+              <button class="recipe-hit" type="button" data-recipe="recipe-snickerdoodle"><span class="sr-only">Open the Snickerdoodle Cookies recipe</span></button>
+            </article>
             <article class="archive-recipe">
               <img src="assets/images/img-03.jpg" alt="Eggless gelatin-free gourmet chocolate mousse plated with berries and chocolate garnish">
               <div class="archive-recipe-copy"><small>Silky &amp; airy</small><h3>Gourmet Chocolate Mousse</h3><span>Read full recipe</span></div>
@@ -733,11 +721,6 @@
               <div class="archive-recipe-copy"><small>Dark &amp; theatrical</small><h3>Chocolate Candle Cake</h3><span>Read full recipe</span></div>
               <button class="recipe-hit" type="button" data-recipe="recipe-halloween-candle-cake"><span class="sr-only">Open the Chocolate Candle Cake recipe</span></button>
             </article>
-            <article class="archive-recipe">
-              <img src="assets/images/recipe-pumpkin-cupcakes.jpg" alt="Eggless pumpkin double-chocolate cupcake with pumpkin-spice buttercream and dark chocolate chips">
-              <div class="archive-recipe-copy"><small>Spiced &amp; chocolatey</small><h3>Pumpkin Double-Chocolate Cupcakes</h3><span>Read full recipe</span></div>
-              <button class="recipe-hit" type="button" data-recipe="recipe-pumpkin-cupcakes"><span class="sr-only">Open the Pumpkin Double-Chocolate Cupcakes recipe</span></button>
-            </article>
           </div>
         </div>
       </div>
@@ -746,10 +729,68 @@
     <dialog class="recipe-reader" id="recipeReader" aria-label="Full recipe">
       <div class="recipe-reader-shell">
         <button class="recipe-close" id="recipeClose" type="button"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 5l14 14M19 5L5 19"/></svg> Close recipe</button>
-        <button class="recipe-close" id="recipeCopyLink" type="button">Copy link</button>
         <div id="recipeReaderContent"></div>
       </div>
     </dialog>
+    <template id="recipe-template-recipe-snickerdoodle">
+      <article class="recipe-page">
+        <header class="recipe-page-hero">
+          <div><small>Eggless · Brown butter</small><h2>Eggless Gourmet Snickerdoodle Cookies</h2><p>Brown butter · cinnamon sugar · soft chewy centre.</p></div>
+        </header>
+        <div class="recipe-sheet" id="recipe-snickerdoodle">
+<div class="rkicker">New recipe</div>
+<h3>Eggless Gourmet Snickerdoodle Cookies</h3>
+<p class="rtag">Deep brown-butter aroma, a delicate cinnamon-sugar crust, lightly crisp edges and a soft chewy centre — completely eggless.</p>
+<div class="recipe-spec">
+<div><strong>Yield</strong>12 large cookies</div>
+<div><strong>Bake</strong>175°C / 165°C fan, 10–12 min</div>
+<div><strong>Portion</strong>55–60 g each</div>
+</div>
+<h4>Ingredients — brown-butter dough</h4>
+<table class="ing-table">
+<tr><td>Unsalted butter</td><td>120 g</td></tr>
+<tr><td>Milk powder</td><td>15 g</td></tr>
+<tr><td>Caster sugar</td><td>100 g</td></tr>
+<tr><td>Light brown sugar</td><td>60 g</td></tr>
+<tr><td>Full-fat Greek yoghurt</td><td>45 g</td></tr>
+<tr><td>Vanilla bean paste</td><td>5 g</td></tr>
+<tr><td>Plain flour</td><td>175 g</td></tr>
+<tr><td>Cornflour</td><td>15 g</td></tr>
+<tr><td>Cream of tartar</td><td>4 g</td></tr>
+<tr><td>Baking soda</td><td>2 g</td></tr>
+<tr><td>Fine sea salt</td><td>2 g</td></tr>
+<tr><td>Ground cinnamon</td><td>1 g</td></tr>
+</table>
+<h4>Cinnamon-sugar coating</h4>
+<table class="ing-table">
+<tr><td>Caster sugar</td><td>55 g</td></tr>
+<tr><td>Ground cinnamon</td><td>6 g</td></tr>
+<tr><td>Fine sea salt</td><td>0.5 g</td></tr>
+</table>
+<h4>Method</h4>
+<ol class="steps">
+<li><p><strong>Brown the butter.</strong> Melt the butter over medium heat. Add the milk powder and stir continuously until the milk solids turn deep golden brown and smell nutty. Immediately transfer to a heatproof bowl.</p></li>
+<li><p><strong>Cool.</strong> Let the brown butter become lukewarm but still fluid.</p></li>
+<li><p><strong>Build the wet base.</strong> Whisk the brown butter with the caster sugar and brown sugar for 1–2 minutes. Add the Greek yoghurt and vanilla and whisk until glossy and cohesive.</p></li>
+<li><p><strong>Sift.</strong> Sift the flour, cornflour, cream of tartar, baking soda, salt and cinnamon together.</p></li>
+<li><p><strong>Make the dough.</strong> Fold the dry ingredients into the wet mixture just until no dry flour remains. Do not overmix.</p></li>
+<li><p><strong>Chill.</strong> Cover and refrigerate 45–60 minutes until firm but pliable.</p></li>
+<li><p><strong>Coat.</strong> Mix the coating sugar, cinnamon and salt thoroughly. Divide the dough into 12 portions of 55–60 g, roll each into a thick smooth ball and coat generously in cinnamon sugar. Place on parchment with generous spacing.</p></li>
+<li><p><strong>Bake</strong> at 175°C / 165°C fan for 10–12 minutes. Edges should be set while centres remain visibly soft — do not wait for the centres to firm up in the oven; they continue setting as they cool.</p></li>
+<li><p><strong>Finish.</strong> Rest on the tray 5–10 minutes. For neat bakery-style edges, gently swirl each warm cookie inside a round cutter slightly larger than the cookie. Transfer to a rack once stable.</p></li>
+</ol>
+<h4>Curly Chef notes</h4>
+<ul class="rnotes">
+<li><strong>Why it can’t fail:</strong> deeply browned milk solids carry the flavour, cream of tartar gives the classic tang and tenderness, and slight underbaking guarantees the chewy centre.</li>
+<li><strong>Don’t skip the chill</strong> — it controls spread and keeps the centre thick.</li>
+<li><strong>Use thick full-fat Greek yoghurt</strong> — thin yoghurt throws off the dough.</li>
+<li><strong>Storage:</strong> airtight at room temperature for 3–4 days.</li>
+</ul>
+<p class="rsign">Curly Chef standard: eggless · brown butter · cinnamon sugar</p>
+<p style="margin-top:16px"><a class="button secondary" href="https://drive.google.com/file/d/1xlCQZ4UwMmnP0uLY5v30m_zFUWBjrxrz/view?usp=drivesdk" target="_blank" rel="noopener">Download PDF</a></p>
+</div>
+      </article>
+    </template>
     <template id="recipe-template-mousse-recipe">
       <article class="recipe-page">
         <header class="recipe-page-hero">
@@ -1021,98 +1062,6 @@
 </div>
       </article>
     </template>
-    <template id="recipe-template-recipe-pumpkin-cupcakes">
-      <article class="recipe-page">
-        <header class="recipe-page-hero">
-          <div><small>Eggless · Spiced &amp; chocolatey</small><h2>Eggless Pumpkin Double-Chocolate Cupcakes</h2><p>Dark chocolate sponge, warm pumpkin spice, silky pumpkin-spice buttercream.</p></div>
-        </header>
-        <div class="recipe-sheet" id="recipe-pumpkin-cupcakes">
-<div class="rkicker">New recipe · Halloween edition</div>
-<h3>Eggless Pumpkin Double-Chocolate Cupcakes</h3>
-<p class="rtag">Deeply chocolatey, moist and soft — with warm pumpkin-spice notes, dark chocolate pieces and a swirl of pumpkin-spice buttercream.</p>
-<div class="recipe-spec">
-<div><strong>Makes</strong>12 cupcakes</div>
-<div><strong>Bake</strong>170°C / 160°C fan, 17–21 min</div>
-<div><strong>Finish</strong>Pumpkin-spice buttercream</div>
-</div>
-<h4>Ingredients</h4>
-<table class="ing-table">
-<tr><td>Plain flour</td><td>180 g</td></tr>
-<tr><td>Dutch-process cocoa powder</td><td>35 g</td></tr>
-<tr><td>Cornflour</td><td>15 g</td></tr>
-<tr><td>Baking powder</td><td>4 g</td></tr>
-<tr><td>Baking soda</td><td>2 g</td></tr>
-<tr><td>Fine sea salt</td><td>2 g</td></tr>
-<tr><td>Ground cinnamon</td><td>2 g</td></tr>
-<tr><td>Ground ginger</td><td>1 g</td></tr>
-<tr><td>Ground nutmeg</td><td>0.5 g</td></tr>
-<tr><td>Ground cloves</td><td>0.2 g</td></tr>
-<tr><td>100% pumpkin purée</td><td>220 g</td></tr>
-<tr><td>Full-fat Greek yoghurt</td><td>100 g</td></tr>
-<tr><td>Full-fat milk</td><td>80 g</td></tr>
-<tr><td>Neutral oil</td><td>65 g</td></tr>
-<tr><td>Unsalted butter, melted</td><td>45 g</td></tr>
-<tr><td>Caster sugar</td><td>125 g</td></tr>
-<tr><td>Dark brown sugar</td><td>65 g</td></tr>
-<tr><td>Vanilla bean paste</td><td>5 g</td></tr>
-<tr><td>Espresso powder</td><td>2 g</td></tr>
-<tr><td>70% dark couverture, melted</td><td>90 g</td></tr>
-<tr><td>Dark chocolate, chopped</td><td>100 g</td></tr>
-</table>
-<h4>Pumpkin-spice buttercream</h4>
-<table class="ing-table">
-<tr><td>Unsalted butter, softened</td><td>150 g</td></tr>
-<tr><td>Icing sugar, sifted</td><td>75 g</td></tr>
-<tr><td>Full-fat milk powder</td><td>15 g</td></tr>
-<tr><td>Thick pumpkin purée</td><td>35 g</td></tr>
-<tr><td>Vanilla bean paste</td><td>2 g</td></tr>
-<tr><td>Ground cinnamon</td><td>1 g</td></tr>
-<tr><td>Ground ginger</td><td>0.5 g</td></tr>
-<tr><td>Ground nutmeg</td><td>0.2 g</td></tr>
-<tr><td>Fine sea salt</td><td>0.5 g</td></tr>
-</table>
-<h4>Method</h4>
-<ol class="steps">
-<li><p><strong>Prep the pumpkin.</strong> If the purée is watery, cook gently for 3–5 minutes until thick and spoonable. Cool completely.</p></li>
-<li><p><strong>Melt the chocolate.</strong> Melt the 70% couverture gently to 40–45°C and keep warm.</p></li>
-<li><p><strong>Sift the dries.</strong> Sift the flour, cocoa, cornflour, baking powder, baking soda, salt and all four pumpkin spices into a bowl.</p></li>
-<li><p><strong>Whisk the wets.</strong> Whisk the pumpkin, yoghurt, milk, oil, melted butter, both sugars, vanilla and espresso until completely smooth.</p></li>
-<li><p><strong>Add the chocolate.</strong> Whisk the melted couverture into the wet mixture until homogeneous.</p></li>
-<li><p><strong>Combine.</strong> Fold the dry ingredients into the wet in two additions, stopping as soon as combined — no visible flour, no more.</p></li>
-<li><p><strong>Chocolate pieces.</strong> Fold through the chopped dark chocolate.</p></li>
-<li><p><strong>Portion.</strong> Divide between 12 cupcake liners, about two-thirds full.</p></li>
-<li><p><strong>Bake</strong> at 170°C / 160°C fan for 17–21 minutes. Look for moist crumbs on the skewer, not a clean skewer.</p></li>
-<li><p><strong>Cool.</strong> Rest 5 minutes in the tray, then move to a wire rack to cool completely.</p></li>
-</ol>
-<h4>Pumpkin-spice buttercream</h4>
-<ol class="steps">
-<li><p><strong>Whip the butter</strong> for 4–5 minutes until pale and fluffy.</p></li>
-<li><p><strong>Add the sugars.</strong> Beat in the sifted icing sugar, milk powder and salt until smooth.</p></li>
-<li><p><strong>Spice it.</strong> Add the pumpkin purée, vanilla, cinnamon, ginger and nutmeg; beat until silky and pipeable.</p></li>
-<li><p><strong>Too soft?</strong> Chill 10–15 minutes and re-whip briefly.</p></li>
-</ol>
-<h4>Assembly &amp; finish</h4>
-<ol class="steps">
-<li><p><strong>Optional centre.</strong> Core each cooled cupcake and fill with 8–10 g of the buttercream.</p></li>
-<li><p><strong>Pipe</strong> one generous swirl per cupcake with a large open-star nozzle.</p></li>
-<li><p><strong>Finish</strong> with a restrained sprinkle of dark chocolate chips.</p></li>
-<li><p><strong>Halloween presentation:</strong> serve beside a real carved pumpkin with a small warm light inside.</p></li>
-</ol>
-<h4>Curly Chef notes</h4>
-<ul class="rnotes">
-<li><strong>Why it can’t fail:</strong> pumpkin purée and yoghurt keep the crumb moist for days, and the buttercream covers any imperfection.</li>
-<li><strong>Use thick, unsweetened 100% pumpkin purée</strong> — excess water makes the crumb heavy.</li>
-<li><strong>Good-quality couverture</strong> gives a deeper chocolate flavour than chips alone.</li>
-<li><strong>Spice with restraint</strong> — warm and noticeable, never overpowering the chocolate.</li>
-<li><strong>Don’t overmix</strong> once the flour goes in.</li>
-<li><strong>Cool completely</strong> before piping, or the buttercream will slide.</li>
-<li><strong>Storage:</strong> airtight and refrigerated; bring towards room temperature before serving.</li>
-</ul>
-<p class="rpdf"><a class="button secondary" href="assets/recipes/eggless-pumpkin-double-chocolate-cupcakes.pdf" download>Download the PDF recipe</a></p>
-<p class="rsign">Curly Chef standard: eggless · foolproof · restaurant-style comfort</p>
-</div>
-      </article>
-    </template>
 
     <section class="finale" id="contact">
       <div class="finale-portraits reveal" aria-label="Portraits of The Curly Chef">
@@ -1164,8 +1113,6 @@
     var sampleIndex = 0;
     var samplePages = ['01','02','03','04','05','06','07','08','09','10'];
     var lastRecipeTrigger = null;
-    var currentRecipeId = null;
-    var recipeCopyLink = document.getElementById('recipeCopyLink');
     var recipeOpenedFromArchive = false;
     var reduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     var lastChapter = 0;
@@ -1317,7 +1264,6 @@
     function openRecipe(recipeId, trigger){
       var template = document.getElementById('recipe-template-' + recipeId);
       if(!recipeReader || !recipeReaderContent || !template) return;
-      currentRecipeId = recipeId;
       recipeOpenedFromArchive = !!(recipeArchive && recipeArchive.open);
       if(recipeOpenedFromArchive) closeRecipeArchive(false);
       lastRecipeTrigger = trigger || null;
@@ -1325,14 +1271,11 @@
       document.body.classList.add('recipe-open-state');
       recipeReader.showModal();
       recipeReader.scrollTop = 0;
-      if(history.replaceState) history.replaceState(null, '', '#' + recipeId);
       if(recipeClose) recipeClose.focus();
     }
 
     function closeRecipe(){
       if(!recipeReader || !recipeReader.open) return;
-      currentRecipeId = null;
-      if(history.replaceState) history.replaceState(null, '', location.pathname + location.search);
       recipeReader.close();
     }
 
@@ -1340,18 +1283,6 @@
       button.addEventListener('click', function(){ openRecipe(button.getAttribute('data-recipe'), button); });
     });
     if(recipeClose) recipeClose.addEventListener('click', closeRecipe);
-    if(recipeCopyLink) recipeCopyLink.addEventListener('click', function(){
-      var url = location.origin + location.pathname + (currentRecipeId ? '#' + currentRecipeId : '#recipes');
-      function done(label){ recipeCopyLink.textContent = label; setTimeout(function(){ recipeCopyLink.textContent = 'Copy link'; }, 1600); }
-      if(navigator.clipboard && navigator.clipboard.writeText){
-        navigator.clipboard.writeText(url).then(function(){ done('Copied'); }, function(){ done('Copy failed'); });
-      } else {
-        var ta = document.createElement('textarea');
-        ta.value = url; document.body.appendChild(ta); ta.select();
-        try { document.execCommand('copy'); done('Copied'); } catch(e){ done('Copy failed'); }
-        document.body.removeChild(ta);
-      }
-    });
     if(recipeReader){
       recipeReader.addEventListener('click', function(event){ if(event.target === recipeReader) closeRecipe(); });
       recipeReader.addEventListener('close', function(){
@@ -1386,11 +1317,6 @@
     keepMoving(recipeVideo);
     syncFilm();
 
-    (function openFromHash(){
-      var h = location.hash ? location.hash.replace('#','') : '';
-      if(h && document.getElementById('recipe-template-' + h)) openRecipe(h, null);
-    })();
-
     var reveals = Array.prototype.slice.call(document.querySelectorAll('.reveal'));
     if('IntersectionObserver' in window && !reduced){
       var observer = new IntersectionObserver(function(entries){
@@ -1404,5 +1330,5 @@
     }
   })();
   </script>
-</body>
+<!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "8acec15bff154d8e8921913c44f4e3ad"}'></script><!-- End Cloudflare Web Analytics --></body>
 </html>
