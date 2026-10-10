@@ -1374,7 +1374,7 @@ html,body{overflow-x:clip}
       recipeReader.showModal();
       recipeReader.scrollTop = 0;
       if(recipeClose) recipeClose.focus();
-      try{ history.replaceState(null,'','#recipe-'+recipeId); }catch(e){}
+      try{ history.replaceState(null,'','#'+recipeId); }catch(e){}
     }
 
     function closeRecipe(){
@@ -1434,8 +1434,8 @@ html,body{overflow-x:clip}
     }
 
     (function openDeepLinkedRecipe(){
-      var m = /^#recipe-([a-z0-9-]+)$/.exec(location.hash||'');
-      if(m && document.getElementById('recipe-template-'+m[1])) openRecipe(m[1], null);
+      var id = (location.hash||'').replace(/^#/,'');
+      if(id && document.getElementById('recipe-template-'+id)) openRecipe(id, null);
     })();
   })();
   </script>
