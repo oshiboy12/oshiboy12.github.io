@@ -1374,6 +1374,7 @@ html,body{overflow-x:clip}
       recipeReader.showModal();
       recipeReader.scrollTop = 0;
       if(recipeClose) recipeClose.focus();
+      try{ history.replaceState(null,'','#recipe-'+recipeId); }catch(e){}
     }
 
     function closeRecipe(){
@@ -1390,6 +1391,7 @@ html,body{overflow-x:clip}
       recipeReader.addEventListener('close', function(){
         document.body.classList.remove('recipe-open-state');
         recipeReaderContent.replaceChildren();
+        try{ history.replaceState(null,'',location.pathname+location.search); }catch(e){}
         if(recipeOpenedFromArchive){
           recipeOpenedFromArchive = false;
           openRecipeArchive();
@@ -1430,6 +1432,11 @@ html,body{overflow-x:clip}
     } else {
       reveals.forEach(function(el){ el.classList.add('visible'); });
     }
+
+    (function openDeepLinkedRecipe(){
+      var m = /^#recipe-([a-z0-9-]+)$/.exec(location.hash||'');
+      if(m && document.getElementById('recipe-template-'+m[1])) openRecipe(m[1], null);
+    })();
   })();
   </script>
 <!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "8acec15bff154d8e8921913c44f4e3ad"}'></script><!-- End Cloudflare Web Analytics --></body>
