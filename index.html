@@ -485,6 +485,14 @@ html,body{overflow-x:clip}
 @supports not (overflow:clip){html,body{overflow-x:hidden}}
 .edition-note>*{min-width:0}
 @media (max-width:840px){.edition-note blockquote{font-size:clamp(30px,9.5vw,46px)}}
+    /* Language switcher (Google Translate) — English is the default; visitor picks a language */
+    .lang-switch { position:fixed; right:16px; bottom:16px; z-index:60; }
+    #google_translate_element .goog-te-gadget-simple { background:rgba(3,19,15,.88); border:1px solid rgba(240,213,142,.4); border-radius:999px; padding:7px 12px; font-size:12px; font-family:inherit; }
+    #google_translate_element .goog-te-gadget-simple .goog-te-menu-value span { color:#f4ead7 !important; }
+    #google_translate_element .goog-te-gadget-icon { display:none !important; }
+    #google_translate_element .goog-te-gadget-simple .goog-te-menu-value span:last-child { color:#e8c766 !important; }
+    .goog-te-banner-frame { display:none !important; }
+    body { top:0 !important; }
 </style>
 </head>
 <body>
@@ -502,6 +510,7 @@ html,body{overflow-x:clip}
       </div>
     </div>
   </nav>
+  <div class="lang-switch" id="google_translate_element" title="Change language"></div>
   <section class="film-scroll" id="film" aria-label="Cinematic introduction">
     <div class="film-stage">
       <video id="heroVideo" muted playsinline autoplay loop preload="auto" poster="assets/images/img-00.jpg" aria-label="Close-up film of glossy melted chocolate folding, swirling and pouring">
@@ -1653,5 +1662,11 @@ html,body{overflow-x:clip}
     })();
   })();
   </script>
-<!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "8acec15bff154d8e8921913c44f4e3ad"}'></script><!-- End Cloudflare Web Analytics --></body>
+<!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "8acec15bff154d8e8921913c44f4e3ad"}'></script><!-- End Cloudflare Web Analytics --><script>
+    function googleTranslateElementInit(){
+      new google.translate.TranslateElement({pageLanguage:'en', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
+    }
+  </script>
+  <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+</body>
 </html>
