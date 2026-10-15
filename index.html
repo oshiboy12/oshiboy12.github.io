@@ -493,6 +493,56 @@ html,body{overflow-x:clip}
     #google_translate_element .goog-te-gadget-simple .goog-te-menu-value span:last-child { color:#e8c766 !important; }
     .goog-te-banner-frame { display:none !important; }
     body { top:0 !important; }
+    /* ===== Colorful recipe pages: jewel-tone accents, hero banners, tinted panels ===== */
+    .recipe-image { border-radius:16px; }
+    .recipe-image::after { content:""; position:absolute; inset:0; background:linear-gradient(180deg,transparent 55%,rgba(30,8,2,.38)); pointer-events:none; }
+    .recipe-card:hover .recipe-image, .recipe-card:focus-within .recipe-image { box-shadow:0 18px 44px rgba(60,20,0,.35), 0 0 0 2px rgba(240,213,142,.55); }
+    .recipe-card:hover img, .recipe-card:focus-within img { transform:scale(1.06); }
+    .recipe-card figcaption small { display:inline-block; padding:7px 13px; border-radius:999px; background:rgba(240,213,142,.16); border:1px solid rgba(240,213,142,.45); color:var(--gold-hi); }
+    .recipe-card:hover h3, .recipe-card:focus-within h3 { color:var(--gold-hi); }
+    .recipe-card .read-label { color:#f0dfae; }
+    .archive-recipe { overflow:hidden; }
+    .archive-recipe::before { content:""; position:absolute; z-index:2; left:0; top:0; bottom:0; width:6px; background:linear-gradient(180deg,#e8c766,#b4550a,#7a2e2e); }
+    .archive-recipe small { display:inline-block; padding:6px 12px; border-radius:999px; background:rgba(122,90,16,.12); border:1px solid rgba(122,90,16,.3); color:#7a5a10; }
+    .archive-recipe:hover img { transform:scale(1.04); }
+    .archive-recipe img { transition:transform .6s cubic-bezier(.2,.6,.2,1); }
+
+    /* Reader hero banner: full-bleed photo + gradient scrim + cream text */
+    .recipe-page-hero { position:relative; display:flex; align-items:flex-end; min-height:clamp(300px,45vw,460px); max-width:1000px; margin-bottom:clamp(48px,7vw,84px); border-radius:26px; overflow:hidden; }
+    .recipe-page-hero .recipe-hero-img { position:absolute; inset:0; }
+    .recipe-page-hero .recipe-hero-img img { display:block; width:100%; height:100%; object-fit:cover; }
+    .recipe-page-hero::after { content:""; position:absolute; inset:0; background:linear-gradient(180deg,rgba(2,15,11,.05) 30%,rgba(2,15,11,.78) 88%); pointer-events:none; }
+    .recipe-page-hero > div { position:relative; z-index:2; padding:clamp(26px,4vw,48px); color:#fff8e7; }
+    .recipe-page-hero small { color:#f3d98b; text-shadow:0 1px 8px rgba(0,0,0,.5); }
+    .recipe-page-hero h2 { color:#fff8e7; text-shadow:0 2px 18px rgba(0,0,0,.55); }
+    .recipe-page-hero p { color:#fdf3d7; text-shadow:0 1px 10px rgba(0,0,0,.5); }
+
+    /* Per-recipe jewel-tone accents */
+    #recipe-choc-tres-leches { --accent:#7a2e1d; --accent-soft:#f9ece5; }
+    #recipe-marble-cookies { --accent:#5b2a4a; --accent-soft:#f6e9f0; }
+    #recipe-pumpkin-cupcakes { --accent:#b4550a; --accent-soft:#fdeeda; }
+    #recipe-snickerdoodle { --accent:#8a6410; --accent-soft:#fbf2d8; }
+    #mousse-recipe { --accent:#8e1f3c; --accent-soft:#fae3e9; }
+    #recipe-sticky-toffee { --accent:#7a4a0e; --accent-soft:#f8ecd9; }
+    #recipe-saffron-milk-cake { --accent:#c07a00; --accent-soft:#fdf3d7; }
+    #recipe-choc-tiffin { --accent:#3d2317; --accent-soft:#f1e7de; }
+    #recipe-halloween-candle-cake { --accent:#3a2a6b; --accent-soft:#ebe7f8; }
+
+    .recipe-sheet h4 { color:var(--accent,#8a6410); background:var(--accent-soft,#f8f1dc); border:0; border-left:6px solid var(--accent,#8a6410); border-radius:0 14px 14px 0; padding:14px 18px; }
+    .recipe-sheet .rkicker { color:var(--accent,#8a6410); }
+    .recipe-spec { gap:14px; border:0; }
+    .recipe-spec > div { background:var(--accent-soft,#f8f1dc); border-radius:14px; padding:18px; }
+    .recipe-spec > div + div { border-left:0; padding-left:18px; }
+    .recipe-spec strong { color:var(--accent,#8a6410); }
+    .ing-table tr:nth-child(even) td { background:var(--accent-soft,#faf4e2); }
+    .ing-table td { padding:12px 10px; }
+    .ing-table td:last-child { color:var(--accent,#8a6410); font-weight:700; }
+    .steps li::before { width:34px; height:34px; border-radius:50%; background:var(--accent,#8a6410); color:#fff8e7; display:flex; align-items:center; justify-content:center; font-size:11px; letter-spacing:0; box-shadow:0 4px 12px rgba(0,0,0,.18); }
+    .steps li { padding-left:54px; }
+    .rnotes li { background:var(--accent-soft,#faf4e2); border:0; border-radius:12px; padding:14px 16px; margin-bottom:8px; }
+    .rsign { color:var(--accent,#8a6410); }
+    .recipe-sheet a.button { display:inline-block; background:var(--accent,#8a6410); color:#fff8e7; border:0; padding:14px 26px; border-radius:999px; font-weight:700; letter-spacing:.06em; text-decoration:none; box-shadow:0 10px 24px rgba(0,0,0,.2); }
+    .recipe-sheet a.button:hover { filter:brightness(1.12); }
 </style>
 </head>
 <body>
@@ -813,6 +863,7 @@ html,body{overflow-x:clip}
     <template id="recipe-template-recipe-choc-tres-leches">
       <article class="recipe-page">
         <header class="recipe-page-hero">
+          <div class="recipe-hero-img"><img src="assets/images/recipe-choc-tres-leches.jpg" alt="Eggless chocolate tres leches cake slice with glossy ganache dripping over chocolate mascarpone icing"></div>
           <div><small>Eggless &middot; Milk-soaked</small><h2>Eggless Chocolate Tres Leches Cake</h2><p>Deeply chocolatey, milk-soaked sponge with silky chocolate mascarpone icing and glossy dark chocolate ganache.</p></div>
         </header>
         <div class="recipe-sheet" id="recipe-choc-tres-leches">
@@ -912,6 +963,7 @@ html,body{overflow-x:clip}
 <template id="recipe-template-recipe-marble-cookies">
       <article class="recipe-page">
         <header class="recipe-page-hero">
+          <div class="recipe-hero-img"><img src="assets/images/img-marble-cookies.jpg" alt="Eggless dark marble cookies with crackled tops and swirled vanilla-chocolate centres on black stone"></div>
           <div><small>Eggless · Dark marble</small><h2>Eggless Dark Marble Cookies</h2><p>Vanilla &amp; dark chocolate · crackled tops · chewy centres.</p></div>
         </header>
         <div class="recipe-sheet" id="recipe-marble-cookies">
@@ -968,6 +1020,7 @@ html,body{overflow-x:clip}
     <template id="recipe-template-recipe-pumpkin-cupcakes">
       <article class="recipe-page">
         <header class="recipe-page-hero">
+          <div class="recipe-hero-img"><img src="assets/images/recipe-pumpkin-cupcakes.jpg" alt="Eggless pumpkin double-chocolate cupcake with pumpkin-spice buttercream and dark chocolate chips"></div>
           <div><small>Eggless · Spiced &amp; chocolatey</small><h2>Eggless Pumpkin Double-Chocolate Cupcakes</h2><p>Dark chocolate sponge, warm pumpkin spice, silky pumpkin-spice buttercream.</p></div>
         </header>
         <div class="recipe-sheet" id="recipe-pumpkin-cupcakes">
@@ -1060,6 +1113,7 @@ html,body{overflow-x:clip}
     <template id="recipe-template-recipe-snickerdoodle">
       <article class="recipe-page">
         <header class="recipe-page-hero">
+          <div class="recipe-hero-img"><img src="assets/images/img-snickerdoodle.jpg" alt="Eggless gourmet snickerdoodle cookies with cinnamon-sugar crackle, held in a black-gloved hand"></div>
           <div><small>Eggless · Brown butter</small><h2>Eggless Gourmet Snickerdoodle Cookies</h2><p>Brown butter · cinnamon sugar · soft chewy centre.</p></div>
         </header>
         <div class="recipe-sheet" id="recipe-snickerdoodle">
@@ -1119,6 +1173,7 @@ html,body{overflow-x:clip}
     <template id="recipe-template-mousse-recipe">
       <article class="recipe-page">
         <header class="recipe-page-hero">
+          <div class="recipe-hero-img"><img src="assets/images/img-03.jpg" alt="Eggless gelatin-free gourmet chocolate mousse plated with berries and chocolate garnish"></div>
           <div><small>Eggless · Gelatin-free</small><h2>Eggless Gelatin-Free Gourmet Chocolate Mousse</h2><p>French-inspired, silky, airy and intensely chocolatey.</p></div>
         </header>
         <div class="recipe-sheet" id="mousse-recipe">
@@ -1172,6 +1227,7 @@ html,body{overflow-x:clip}
     <template id="recipe-template-recipe-sticky-toffee">
       <article class="recipe-page">
         <header class="recipe-page-hero">
+          <div class="recipe-hero-img"><img src="assets/images/img-04.jpg" alt="Eggless sticky toffee pudding with glossy toffee sauce"></div>
           <div><small>Eggless · Warm & layered</small><h2>Eggless Sticky Toffee Pudding</h2><p>Dark, date-rich sponge drowned in warm toffee sauce.</p></div>
         </header>
         <div class="recipe-sheet" id="recipe-sticky-toffee">
@@ -1229,6 +1285,7 @@ html,body{overflow-x:clip}
     <template id="recipe-template-recipe-saffron-milk-cake">
       <article class="recipe-page">
         <header class="recipe-page-hero">
+          <div class="recipe-hero-img"><img src="assets/images/img-05.jpg" alt="Eggless saffron milk cake with pistachio garnish"></div>
           <div><small>Eggless · Fragrant & tender</small><h2>Eggless Saffron Milk Cake</h2><p>Hot-milk sponge soaked in golden saffron milk.</p></div>
         </header>
         <div class="recipe-sheet" id="recipe-saffron-milk-cake">
@@ -1284,6 +1341,7 @@ html,body{overflow-x:clip}
     <template id="recipe-template-recipe-choc-tiffin">
       <article class="recipe-page">
         <header class="recipe-page-hero">
+          <div class="recipe-hero-img"><img src="assets/images/img-06.jpg" alt="Eggless dark chocolate tiffin cut into rich layered slices"></div>
           <div><small>Eggless · No-bake</small><h2>Dark Chocolate Tiffin</h2><p>Crushed biscuits, fruit and nuts set under dark chocolate.</p></div>
         </header>
         <div class="recipe-sheet" id="recipe-choc-tiffin">
@@ -1330,6 +1388,7 @@ html,body{overflow-x:clip}
     <template id="recipe-template-recipe-halloween-candle-cake">
       <article class="recipe-page">
         <header class="recipe-page-hero">
+          <div class="recipe-hero-img"><img src="assets/images/img-07.jpg" alt="Tall eggless chocolate candle cake with a lit wick"></div>
           <div><small>Eggless · Showpiece</small><h2>Eggless Halloween Chocolate Candle Cake</h2><p>A tall chocolate layer cake finished as a theatrical candle.</p></div>
         </header>
         <div class="recipe-sheet" id="recipe-halloween-candle-cake">
