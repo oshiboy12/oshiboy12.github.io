@@ -488,10 +488,7 @@ html,body{overflow-x:clip}
 @media (max-width:840px){.edition-note blockquote{font-size:clamp(30px,9.5vw,46px)}}
     /* Language switcher (Google Translate) — English is the default; visitor picks a language */
     .lang-switch { position:fixed; right:16px; bottom:16px; z-index:60; }
-    #google_translate_element .goog-te-gadget-simple { background:rgba(3,19,15,.88); border:1px solid rgba(240,213,142,.4); border-radius:999px; padding:7px 12px; font-size:12px; font-family:inherit; }
-    #google_translate_element .goog-te-gadget-simple .goog-te-menu-value span { color:#f4ead7 !important; }
-    #google_translate_element .goog-te-gadget-icon { display:none !important; }
-    #google_translate_element .goog-te-gadget-simple .goog-te-menu-value span:last-child { color:#e8c766 !important; }
+    #langSelect { appearance:none; -webkit-appearance:none; background-color:#e8c766; background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6' viewBox='0 0 10 6'%3E%3Cpath d='M1 1l4 4 4-4' fill='none' stroke='%231a120b' stroke-width='1.8'/%3E%3C/svg%3E"); background-repeat:no-repeat; background-position:right 12px center; color:#1a120b; border:1px solid #a8821f; border-radius:999px; padding:7px 30px 7px 13px; font-size:11px; font-weight:700; font-family:inherit; cursor:pointer; max-width:158px; }
     .goog-te-banner-frame { display:none !important; }
     body { top:0 !important; }
     /* ===== Colorful recipe pages: jewel-tone accents, hero banners, tinted panels ===== */
@@ -508,15 +505,6 @@ html,body{overflow-x:clip}
     .archive-recipe:hover img { transform:scale(1.04); }
     .archive-recipe img { transition:transform .6s cubic-bezier(.2,.6,.2,1); }
 
-    /* Reader hero banner: full-bleed photo + gradient scrim + cream text */
-    .recipe-page-hero { position:relative; display:flex; align-items:flex-end; min-height:clamp(300px,45vw,460px); max-width:1000px; margin-bottom:clamp(48px,7vw,84px); border-radius:26px; overflow:hidden; }
-    .recipe-page-hero .recipe-hero-img { position:absolute; inset:0; }
-    .recipe-page-hero .recipe-hero-img img { display:block; width:100%; height:100%; object-fit:cover; }
-    .recipe-page-hero::after { content:""; position:absolute; inset:0; background:linear-gradient(180deg,rgba(2,15,11,.05) 30%,rgba(2,15,11,.78) 88%); pointer-events:none; }
-    .recipe-page-hero > div { position:relative; z-index:2; padding:clamp(26px,4vw,48px); color:#fff8e7; }
-    .recipe-page-hero small { color:#f3d98b; text-shadow:0 1px 8px rgba(0,0,0,.5); }
-    .recipe-page-hero h2 { color:#fff8e7; text-shadow:0 2px 18px rgba(0,0,0,.55); }
-    .recipe-page-hero p { color:#fdf3d7; text-shadow:0 1px 10px rgba(0,0,0,.5); }
 
     /* Per-recipe jewel-tone accents */
     #recipe-choc-tres-leches { --accent:#7a2e1d; --accent-soft:#f9ece5; }
@@ -545,13 +533,14 @@ html,body{overflow-x:clip}
     .recipe-sheet a.button { display:inline-block; background:var(--accent,#8a6410); color:#fff8e7; border:0; padding:14px 26px; border-radius:999px; font-weight:700; letter-spacing:.06em; text-decoration:none; box-shadow:0 10px 24px rgba(0,0,0,.2); }
     .recipe-sheet a.button:hover { filter:brightness(1.12); }
 
-    /* Mobile hero fix: title fits the screen, banner sized by its content */
-    @media (max-width:520px){
-      .recipe-page-hero { min-height:0; border-radius:20px; }
-      .recipe-page-hero > div { padding:22px 18px; }
-      .recipe-page-hero h2 { font-size:clamp(34px,10.5vw,46px); max-width:none; line-height:1.02; }
-      .recipe-page-hero p { font-size:14px; line-height:1.6; margin-top:14px; }
-      .recipe-page-hero small { font-size:9px; }
+
+    /* Story width fix: nothing in The Discipline may run past the screen on phones */
+    @media (max-width:840px){
+      .edition-note { overflow:hidden; }
+      .edition-note blockquote { font-size:clamp(28px,8.5vw,40px); max-width:100%; overflow-wrap:break-word; }
+      .discipline-copy { min-width:0; max-width:100%; }
+      .discipline-copy > p { max-width:100%; overflow-wrap:break-word; }
+      .discipline-visual { max-width:100%; }
     }
 </style>
 </head>
@@ -570,7 +559,8 @@ html,body{overflow-x:clip}
       </div>
     </div>
   </nav>
-  <div class="lang-switch" id="google_translate_element" title="Change language"></div>
+<div class="lang-switch"><select id="langSelect" class="notranslate" aria-label="Select language"><option value="en">English</option><option value="af">Afrikaans</option><option value="sq">Albanian</option><option value="am">Amharic</option><option value="ar">Arabic</option><option value="hy">Armenian</option><option value="as">Assamese</option><option value="ay">Aymara</option><option value="az">Azerbaijani</option><option value="bm">Bambara</option><option value="eu">Basque</option><option value="be">Belarusian</option><option value="bn">Bengali</option><option value="bho">Bhojpuri</option><option value="bs">Bosnian</option><option value="bg">Bulgarian</option><option value="ca">Catalan</option><option value="ceb">Cebuano</option><option value="zh-CN">Chinese (Simplified)</option><option value="zh-TW">Chinese (Traditional)</option><option value="co">Corsican</option><option value="hr">Croatian</option><option value="cs">Czech</option><option value="da">Danish</option><option value="dv">Divehi</option><option value="doi">Dogri</option><option value="nl">Dutch</option><option value="eo">Esperanto</option><option value="et">Estonian</option><option value="ee">Ewe</option><option value="fil">Filipino</option><option value="fi">Finnish</option><option value="fr">French</option><option value="fy">Frisian</option><option value="gl">Galician</option><option value="ka">Georgian</option><option value="de">German</option><option value="el">Greek</option><option value="gn">Guarani</option><option value="gu">Gujarati</option><option value="ht">Haitian Creole</option><option value="ha">Hausa</option><option value="haw">Hawaiian</option><option value="he">Hebrew</option><option value="hi">Hindi</option><option value="hmn">Hmong</option><option value="hu">Hungarian</option><option value="is">Icelandic</option><option value="ig">Igbo</option><option value="ilo">Ilocano</option><option value="id">Indonesian</option><option value="ga">Irish</option><option value="it">Italian</option><option value="ja">Japanese</option><option value="jv">Javanese</option><option value="kn">Kannada</option><option value="kk">Kazakh</option><option value="km">Khmer</option><option value="rw">Kinyarwanda</option><option value="gom">Konkani</option><option value="ko">Korean</option><option value="kri">Krio</option><option value="ku">Kurdish (Kurmanji)</option><option value="ckb">Kurdish (Sorani)</option><option value="ky">Kyrgyz</option><option value="lo">Lao</option><option value="la">Latin</option><option value="lv">Latvian</option><option value="ln">Lingala</option><option value="lt">Lithuanian</option><option value="lb">Luxembourgish</option><option value="mk">Macedonian</option><option value="mai">Maithili</option><option value="mg">Malagasy</option><option value="ms">Malay</option><option value="ml">Malayalam</option><option value="mt">Maltese</option><option value="mi">Maori</option><option value="mr">Marathi</option><option value="mni-Mtei">Meiteilon (Manipuri)</option><option value="lus">Mizo</option><option value="mn">Mongolian</option><option value="my">Myanmar (Burmese)</option><option value="ne">Nepali</option><option value="nso">Northern Sotho</option><option value="no">Norwegian</option><option value="ny">Nyanja (Chichewa)</option><option value="or">Odia (Oriya)</option><option value="om">Oromo</option><option value="ps">Pashto</option><option value="fa">Persian</option><option value="pl">Polish</option><option value="pt">Portuguese</option><option value="pa">Punjabi</option><option value="qu">Quechua</option><option value="ro">Romanian</option><option value="ru">Russian</option><option value="sm">Samoan</option><option value="sa">Sanskrit</option><option value="gd">Scots Gaelic</option><option value="sr">Serbian</option><option value="st">Sesotho</option><option value="sn">Shona</option><option value="sd">Sindhi</option><option value="si">Sinhala</option><option value="sk">Slovak</option><option value="sl">Slovenian</option><option value="so">Somali</option><option value="es">Spanish</option><option value="su">Sundanese</option><option value="sw">Swahili</option><option value="sv">Swedish</option><option value="tl">Tagalog</option><option value="tg">Tajik</option><option value="ta">Tamil</option><option value="tt">Tatar</option><option value="te">Telugu</option><option value="th">Thai</option><option value="ti">Tigrinya</option><option value="ts">Tsonga</option><option value="tr">Turkish</option><option value="tk">Turkmen</option><option value="ak">Twi</option><option value="uk">Ukrainian</option><option value="ur">Urdu</option><option value="ug">Uyghur</option><option value="uz">Uzbek</option><option value="vi">Vietnamese</option><option value="cy">Welsh</option><option value="xh">Xhosa</option><option value="yi">Yiddish</option><option value="yo">Yoruba</option><option value="zu">Zulu</option></select></div>
+  <div id="google_translate_element" style="display:none"></div>
   <section class="film-scroll" id="film" aria-label="Cinematic introduction">
     <div class="film-stage">
       <video id="heroVideo" muted playsinline autoplay loop preload="auto" poster="assets/images/img-00.jpg" aria-label="Close-up film of glossy melted chocolate folding, swirling and pouring">
@@ -873,7 +863,6 @@ html,body{overflow-x:clip}
     <template id="recipe-template-recipe-choc-tres-leches">
       <article class="recipe-page">
         <header class="recipe-page-hero">
-          <div class="recipe-hero-img"><img src="assets/images/recipe-choc-tres-leches.jpg" alt="Eggless chocolate tres leches cake slice with glossy ganache dripping over chocolate mascarpone icing"></div>
           <div><small>Eggless &middot; Milk-soaked</small><h2>Eggless Chocolate Tres Leches Cake</h2><p>Deeply chocolatey, milk-soaked sponge with silky chocolate mascarpone icing and glossy dark chocolate ganache.</p></div>
         </header>
         <div class="recipe-sheet" id="recipe-choc-tres-leches">
@@ -973,7 +962,6 @@ html,body{overflow-x:clip}
 <template id="recipe-template-recipe-marble-cookies">
       <article class="recipe-page">
         <header class="recipe-page-hero">
-          <div class="recipe-hero-img"><img src="assets/images/img-marble-cookies.jpg" alt="Eggless dark marble cookies with crackled tops and swirled vanilla-chocolate centres on black stone"></div>
           <div><small>Eggless · Dark marble</small><h2>Eggless Dark Marble Cookies</h2><p>Vanilla &amp; dark chocolate · crackled tops · chewy centres.</p></div>
         </header>
         <div class="recipe-sheet" id="recipe-marble-cookies">
@@ -1030,7 +1018,6 @@ html,body{overflow-x:clip}
     <template id="recipe-template-recipe-pumpkin-cupcakes">
       <article class="recipe-page">
         <header class="recipe-page-hero">
-          <div class="recipe-hero-img"><img src="assets/images/recipe-pumpkin-cupcakes.jpg" alt="Eggless pumpkin double-chocolate cupcake with pumpkin-spice buttercream and dark chocolate chips"></div>
           <div><small>Eggless · Spiced &amp; chocolatey</small><h2>Eggless Pumpkin Double-Chocolate Cupcakes</h2><p>Dark chocolate sponge, warm pumpkin spice, silky pumpkin-spice buttercream.</p></div>
         </header>
         <div class="recipe-sheet" id="recipe-pumpkin-cupcakes">
@@ -1123,7 +1110,6 @@ html,body{overflow-x:clip}
     <template id="recipe-template-recipe-snickerdoodle">
       <article class="recipe-page">
         <header class="recipe-page-hero">
-          <div class="recipe-hero-img"><img src="assets/images/img-snickerdoodle.jpg" alt="Eggless gourmet snickerdoodle cookies with cinnamon-sugar crackle, held in a black-gloved hand"></div>
           <div><small>Eggless · Brown butter</small><h2>Eggless Gourmet Snickerdoodle Cookies</h2><p>Brown butter · cinnamon sugar · soft chewy centre.</p></div>
         </header>
         <div class="recipe-sheet" id="recipe-snickerdoodle">
@@ -1183,7 +1169,6 @@ html,body{overflow-x:clip}
     <template id="recipe-template-mousse-recipe">
       <article class="recipe-page">
         <header class="recipe-page-hero">
-          <div class="recipe-hero-img"><img src="assets/images/img-03.jpg" alt="Eggless gelatin-free gourmet chocolate mousse plated with berries and chocolate garnish"></div>
           <div><small>Eggless · Gelatin-free</small><h2>Eggless Gelatin-Free Gourmet Chocolate Mousse</h2><p>French-inspired, silky, airy and intensely chocolatey.</p></div>
         </header>
         <div class="recipe-sheet" id="mousse-recipe">
@@ -1237,7 +1222,6 @@ html,body{overflow-x:clip}
     <template id="recipe-template-recipe-sticky-toffee">
       <article class="recipe-page">
         <header class="recipe-page-hero">
-          <div class="recipe-hero-img"><img src="assets/images/img-04.jpg" alt="Eggless sticky toffee pudding with glossy toffee sauce"></div>
           <div><small>Eggless · Warm & layered</small><h2>Eggless Sticky Toffee Pudding</h2><p>Dark, date-rich sponge drowned in warm toffee sauce.</p></div>
         </header>
         <div class="recipe-sheet" id="recipe-sticky-toffee">
@@ -1295,7 +1279,6 @@ html,body{overflow-x:clip}
     <template id="recipe-template-recipe-saffron-milk-cake">
       <article class="recipe-page">
         <header class="recipe-page-hero">
-          <div class="recipe-hero-img"><img src="assets/images/img-05.jpg" alt="Eggless saffron milk cake with pistachio garnish"></div>
           <div><small>Eggless · Fragrant & tender</small><h2>Eggless Saffron Milk Cake</h2><p>Hot-milk sponge soaked in golden saffron milk.</p></div>
         </header>
         <div class="recipe-sheet" id="recipe-saffron-milk-cake">
@@ -1351,7 +1334,6 @@ html,body{overflow-x:clip}
     <template id="recipe-template-recipe-choc-tiffin">
       <article class="recipe-page">
         <header class="recipe-page-hero">
-          <div class="recipe-hero-img"><img src="assets/images/img-06.jpg" alt="Eggless dark chocolate tiffin cut into rich layered slices"></div>
           <div><small>Eggless · No-bake</small><h2>Dark Chocolate Tiffin</h2><p>Crushed biscuits, fruit and nuts set under dark chocolate.</p></div>
         </header>
         <div class="recipe-sheet" id="recipe-choc-tiffin">
@@ -1398,7 +1380,6 @@ html,body{overflow-x:clip}
     <template id="recipe-template-recipe-halloween-candle-cake">
       <article class="recipe-page">
         <header class="recipe-page-hero">
-          <div class="recipe-hero-img"><img src="assets/images/img-07.jpg" alt="Tall eggless chocolate candle cake with a lit wick"></div>
           <div><small>Eggless · Showpiece</small><h2>Eggless Halloween Chocolate Candle Cake</h2><p>A tall chocolate layer cake finished as a theatrical candle.</p></div>
         </header>
         <div class="recipe-sheet" id="recipe-halloween-candle-cake">
@@ -1733,8 +1714,20 @@ html,body{overflow-x:clip}
   </script>
 <!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "8acec15bff154d8e8921913c44f4e3ad"}'></script><!-- End Cloudflare Web Analytics --><script>
     function googleTranslateElementInit(){
-      new google.translate.TranslateElement({pageLanguage:'en', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
+      new google.translate.TranslateElement({pageLanguage:'en', autoDisplay:false}, 'google_translate_element');
     }
+    (function(){
+      var sel = document.getElementById('langSelect');
+      if(!sel) return;
+      var m = document.cookie.match(/(?:^|;)\s*googtrans=\/en\/([^;]+)/);
+      if(m){ try{ sel.value = decodeURIComponent(m[1]); }catch(e){} }
+      sel.addEventListener('change', function(){
+        var code = sel.value;
+        document.cookie = 'googtrans=/en/' + code + ';path=/';
+        document.cookie = 'googtrans=/en/' + code + ';path=/;domain=.' + location.hostname;
+        location.reload();
+      });
+    })();
   </script>
   <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 </body>
