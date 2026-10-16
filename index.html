@@ -508,6 +508,7 @@ html,body{overflow-x:clip}
 
     /* Per-recipe jewel-tone accents */
     #recipe-choc-tres-leches { --accent:#7a2e1d; --accent-soft:#f9ece5; }
+    #recipe-cookie-sticks { --accent:#8a5a1e; --accent-soft:#f7ecd2; }
     #recipe-marble-cookies { --accent:#5b2a4a; --accent-soft:#f6e9f0; }
     #recipe-pumpkin-cupcakes { --accent:#b4550a; --accent-soft:#fdeeda; }
     #recipe-snickerdoodle { --accent:#8a6410; --accent-soft:#fbf2d8; }
@@ -744,6 +745,11 @@ html,body{overflow-x:clip}
       </figure>
       <div class="recipe-grid" aria-label="All recipes">
         <figure class="recipe-card reveal">
+          <div class="recipe-image"><img src="assets/images/recipe-cookie-sticks.jpg" alt="Eggless gourmet cookie sticks dipped in dark chocolate with roasted pistachio on dark slate"></div>
+          <figcaption><small>Buttery &middot; Chocolate-dipped</small><h3>Gourmet Cookie Sticks</h3><span class="read-label">Read full recipe</span></figcaption>
+          <button class="recipe-hit" type="button" data-recipe="recipe-cookie-sticks" aria-haspopup="dialog"><span class="sr-only">Open the Gourmet Cookie Sticks recipe</span></button>
+        </figure>
+        <figure class="recipe-card reveal">
           <div class="recipe-image"><img src="assets/images/recipe-choc-tres-leches.jpg" alt="Eggless chocolate tres leches cake slice with glossy ganache dripping over chocolate mascarpone icing"></div>
           <figcaption><small>Milk-soaked &middot; Chocolate</small><h3>Chocolate Tres Leches Cake</h3><span class="read-label">Read full recipe</span></figcaption>
           <button class="recipe-hit" type="button" data-recipe="recipe-choc-tres-leches" aria-haspopup="dialog"><span class="sr-only">Open the Chocolate Tres Leches Cake recipe</span></button>
@@ -805,6 +811,11 @@ html,body{overflow-x:clip}
           </div>
           <div class="recipe-archive-grid">
             <article class="archive-recipe">
+              <img src="assets/images/recipe-cookie-sticks.jpg" alt="Eggless gourmet cookie sticks dipped in dark chocolate with pistachio">
+              <div class="archive-recipe-copy"><small>Buttery &amp; chocolate-dipped</small><h3>Gourmet Cookie Sticks</h3><span>Read full recipe</span></div>
+              <button class="recipe-hit" type="button" data-recipe="recipe-cookie-sticks"><span class="sr-only">Open the Gourmet Cookie Sticks recipe</span></button>
+            </article>
+            <article class="archive-recipe">
               <img src="assets/images/recipe-choc-tres-leches.jpg" alt="Eggless chocolate tres leches cake slice with glossy ganache">
               <div class="archive-recipe-copy"><small>Chocolate &amp; milk-soaked</small><h3>Chocolate Tres Leches Cake</h3><span>Read full recipe</span></div>
               <button class="recipe-hit" type="button" data-recipe="recipe-choc-tres-leches"><span class="sr-only">Open the Chocolate Tres Leches Cake recipe</span></button>
@@ -860,6 +871,75 @@ html,body{overflow-x:clip}
         <div id="recipeReaderContent"></div>
       </div>
     </dialog>
+    <template id="recipe-template-recipe-cookie-sticks">
+      <article class="recipe-page">
+        <header class="recipe-page-hero">
+          <div><small>Eggless &middot; Buttery &middot; Chocolate-dipped</small><h2>Eggless Gourmet Cookie Sticks</h2><p>Slender, evenly baked butter biscuits with a delicate short crumb, dipped in bittersweet couverture and finished with roasted pistachio.</p></div>
+        </header>
+        <div class="recipe-sheet" id="recipe-cookie-sticks">
+<div class="rkicker">New recipe</div>
+<h3>Eggless Gourmet Cookie Sticks</h3>
+<p class="rtag">Buttery, delicately crisp biscuit fingers &mdash; French p&acirc;tisserie-inspired, dipped in dark chocolate and finished with roasted pistachio. Eggless, and no raising agent.</p>
+<div class="recipe-spec">
+<div><strong>Yield</strong>Approx. 30&ndash;35 sticks</div>
+<div><strong>Bake</strong>160&deg;C / 150&deg;C fan, 14&ndash;19 min per tray</div>
+<div><strong>Chill</strong>20&ndash;30 minutes before baking</div>
+</div>
+<h4>Ingredients &mdash; cookie dough</h4>
+<table class="ing-table">
+<tr><td>Unsalted butter, softened</td><td>120 g</td></tr>
+<tr><td>Icing sugar</td><td>55 g</td></tr>
+<tr><td>Cornflour (cornstarch)</td><td>25 g</td></tr>
+<tr><td>Plain flour (maida)</td><td>155 g</td></tr>
+<tr><td>Milk powder</td><td>15 g</td></tr>
+<tr><td>Vanilla bean paste</td><td>4 g</td></tr>
+<tr><td>Fine salt</td><td>1.5 g</td></tr>
+<tr><td>Milk</td><td>10&ndash;15 g, as needed</td></tr>
+</table>
+
+<h4>Ingredients &mdash; chocolate coating &amp; garnish</h4>
+<table class="ing-table">
+<tr><td>Dark couverture chocolate, 55&ndash;65%</td><td>180 g</td></tr>
+<tr><td>Neutral oil or cocoa butter (optional)</td><td>5 g</td></tr>
+<tr><td>Roasted pistachios, finely chopped</td><td>As needed</td></tr>
+<tr><td>Raspberry powder / almond nibs / flaky salt</td><td>As needed</td></tr>
+</table>
+
+<h4>Method</h4>
+<ol class="steps">
+<li><p><strong>Prepare the oven and tray.</strong> Preheat to 160&deg;C conventional (150&deg;C fan). Line a flat tray with parchment. Accurate oven temperature matters more than a fixed baking time.</p></li>
+<li><p><strong>Cream butter and icing sugar.</strong> Mix softened butter and icing sugar with a spatula or hand whisk for 2&ndash;3 minutes until smooth, creamy and slightly lighter. Do not whip in lots of air &mdash; it encourages spreading. Butter should yield when pressed, not look oily or melted.</p></li>
+<li><p><strong>Add flavour and dry enrichments.</strong> Mix in vanilla and salt. Add milk powder and cornflour; stir until evenly distributed. Scrape the sides and base so no dry pockets remain.</p></li>
+<li><p><strong>Add the flour.</strong> Sift in the plain flour. Fold gently until the mixture starts to clump together. Stop as soon as no loose flour remains. Do not knead; excessive mixing develops gluten and makes the sticks tough.</p></li>
+<li><p><strong>Adjust the consistency.</strong> Add milk a little at a time, starting with 10 g. The dough should be soft enough to pipe through a large round nozzle while holding a line on the tray. For hand-rolling, it should form a smooth finger without crumbling. Do not add all the milk automatically.</p></li>
+<li><p><strong>Pipe or roll evenly.</strong> Transfer dough to a piping bag fitted with a large round nozzle. Press dough down to remove large air pockets. Pipe straight sticks about 8&ndash;9 cm long and 8&ndash;10 mm thick, leaving space between them. Keep pressure steady and lift cleanly at the end. Alternatively, roll equal portions into fingers. Uniform thickness is essential.</p></li>
+<li><p><strong>Chill the shaped sticks.</strong> Refrigerate the tray for 20&ndash;30 minutes. Chilling firms the butter and helps the sticks retain their shape. If the dough is very soft, chill until pieces feel firmer to a light touch.</p></li>
+<li><p><strong>Bake.</strong> Bake approximately 14&ndash;19 minutes, checking early &mdash; slim biscuits overbake quickly. Look for set surfaces and lightly golden edges; centres may remain paler. Avoid deep browning. Oven performance varies.</p></li>
+<li><p><strong>Cool completely.</strong> Leave the sticks on the tray until firm enough to move, then transfer carefully to a rack. They are fragile while hot and become crisper as they cool. Do not dip warm biscuits in chocolate; residual heat melts the coating and traps moisture.</p></li>
+<li><p><strong>Prepare the chocolate.</strong> For a professional finish, temper couverture: melt dark chocolate to 45&ndash;50&deg;C, cool to 27&ndash;28&deg;C, then gently rewarm to a working temperature of 31&ndash;32&deg;C. Stir gently and keep water away. For a simpler method, melt gently and mix in up to 5 g neutral oil; this makes dipping easier but gives a softer coating with less snap.</p></li>
+<li><p><strong>Dip and drain.</strong> Hold a cooled stick at one end and dip roughly one-third to one-half into the chocolate. Lift slowly and let excess chocolate drain back into the bowl. Rotate slightly for a clean boundary. Avoid a thick pool at the underside.</p></li>
+<li><p><strong>Garnish and set.</strong> Place dipped sticks on parchment. While the chocolate is wet, add a small pinch of finely chopped roasted pistachio, raspberry powder or another chosen garnish. Keep the finish restrained. Let properly tempered chocolate set in a cool room; otherwise chill briefly if needed.</p></li>
+</ol>
+
+<h4>Curly Chef notes</h4>
+<ul class="rnotes">
+<li><strong>Dough too stiff to pipe?</strong> &mdash; Butter too cold, insufficient liquid, or excess flour. Let dough soften slightly; mix in milk 2&ndash;3 g at a time.</li>
+<li><strong>Sticks spread or lose definition?</strong> &mdash; Butter too warm, dough too soft, or insufficient chilling. Chill longer; verify oven temperature; use pliable, not melted, butter.</li>
+<li><strong>Sticks are tough?</strong> &mdash; Dough kneaded or overmixed after flour was added. Fold only until combined; stop as soon as dough holds together.</li>
+<li><strong>Sticks break while handling?</strong> &mdash; Moved while hot, too thin, or unevenly baked. Cool fully until set; pipe slightly thicker and keep dimensions consistent.</li>
+<li><strong>Pale and soft after cooling?</strong> &mdash; Underbaked, too thick, or excess moisture. Bake 1&ndash;2 minutes longer at a time; cool fully before judging crispness.</li>
+<li><strong>Chocolate looks streaky or dull?</strong> &mdash; Not tempered, overheated, or exposed to moisture. Temper accurately and keep tools dry. Untempered chocolate may taste good but look less polished.</li>
+<li><strong>Coating too thick?</strong> &mdash; Chocolate too cool or viscous. Bring tempered chocolate to working temperature; avoid excess oil.</li>
+<li><strong>Finishing variations:</strong> &mdash; Dark chocolate + pistachio (bittersweet, nutty, elegant); + freeze-dried raspberry (fruity acidity balances the butter); + flaky salt (clean, grown-up &mdash; a few flakes only); chocolate drizzle after the base coat sets.</li>
+<li><strong>Storage:</strong> &mdash; Allow chocolate to set fully before packing. Airtight container, cool dry place, away from sunlight and strong odours. Humidity softens the biscuit. In a hot climate, if refrigeration is necessary, seal well and let it reach room temperature before opening to reduce condensation.</li>
+<li><strong>Equipment:</strong> &mdash; Digital kitchen scale; mixing bowl; flexible spatula; small sieve; piping bag + large round nozzle (or clean hands for rolling); baking tray + parchment; stainless-steel bowl and spatula for chocolate; dipping tool; parchment-lined setting tray.</li>
+</ul>
+
+<p class="rsign">Curly Chef standard: eggless &middot; buttery &middot; chocolate-dipped</p>
+<p style="margin-top:16px"><a class="button secondary" href="assets/recipes/eggless-gourmet-cookie-sticks.pdf" target="_blank" rel="noopener">Download PDF</a></p>
+</div>
+      </article>
+    </template>
     <template id="recipe-template-recipe-choc-tres-leches">
       <article class="recipe-page">
         <header class="recipe-page-hero">
