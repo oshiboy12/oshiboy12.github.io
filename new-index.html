@@ -507,7 +507,8 @@ html,body{overflow-x:clip}
 
 
     /* Per-recipe jewel-tone accents */
-    #recipe-kesar-royale { --accent:#8a3d0a; --accent-soft:#fdeeda; }
+    #recipe-signature-vanilla-bean-cheesecake { --accent:#7d2230; --accent-soft:#fbe9e8; }
+    #recipe-saffron-royale { --accent:#8a3d0a; --accent-soft:#fdeeda; }
     #recipe-brown-butter-sable { --accent:#33200f; --accent-soft:#f6ead9; }
     #recipe-high-protein-peanut-butter-cookies { --accent:#7a4416; --accent-soft:#fbeed2; }
     #recipe-coffee-walnut-tea-cake { --accent:#5a3a1e; --accent-soft:#f6e8d3; }
@@ -763,9 +764,15 @@ html,body{overflow-x:clip}
       </figure>
       <div class="recipe-grid" aria-label="All recipes">
         <figure class="recipe-card reveal">
-          <div class="recipe-image"><img src="assets/images/recipe-kesar-royale.jpg" alt="Eggless kesar royale cookie with brown butter, saffron and cashew praline, topped with white couverture and saffron strands"></div>
-          <figcaption><small>Brown butter &middot; Saffron &amp; cardamom &middot; Cashew praline</small><h3>Kesar Royale Eggless Cookie</h3><span class="read-label">Read full recipe</span></figcaption>
-          <button class="recipe-hit" type="button" data-recipe="recipe-kesar-royale" aria-haspopup="dialog"><span class="sr-only">Open the Kesar Royale Eggless Cookie recipe</span></button>
+          <div class="recipe-image"><img src="assets/images/recipe-signature-vanilla-bean-cheesecake.jpg" alt="Eggless gelatine-free vanilla bean cheesecake slice with raspberry coulis, fresh raspberries and lemon zest"></div>
+          <figcaption><small>Baked &middot; Eggless &middot; Gelatine-free</small><h3>Signature Vanilla Bean Cheesecake</h3><span class="read-label">Read full recipe</span></figcaption>
+          <button class="recipe-hit" type="button" data-recipe="recipe-signature-vanilla-bean-cheesecake" aria-haspopup="dialog"><span class="sr-only">Open the Signature Vanilla Bean Cheesecake recipe</span></button>
+        </figure>
+
+        <figure class="recipe-card reveal">
+          <div class="recipe-image"><img src="assets/images/recipe-saffron-royale.jpg" alt="Eggless saffron royale cookie with brown butter, saffron and cashew praline, topped with white couverture and saffron strands"></div>
+          <figcaption><small>Brown butter &middot; Saffron &amp; cardamom &middot; Cashew praline</small><h3>Saffron Royale Eggless Cookie</h3><span class="read-label">Read full recipe</span></figcaption>
+          <button class="recipe-hit" type="button" data-recipe="recipe-saffron-royale" aria-haspopup="dialog"><span class="sr-only">Open the Saffron Royale Eggless Cookie recipe</span></button>
         </figure>
 
         <figure class="recipe-card reveal">
@@ -885,9 +892,15 @@ html,body{overflow-x:clip}
           </div>
           <div class="recipe-archive-grid">
             <article class="archive-recipe">
-              <img src="assets/images/recipe-kesar-royale.jpg" alt="Eggless kesar royale cookie with brown butter, saffron and cashew praline, topped with white couverture and saffron strands">
-              <div class="archive-recipe-copy"><small>Saffron &amp; cashew praline</small><h3>Kesar Royale Eggless Cookie</h3><span>Read full recipe</span></div>
-              <button class="recipe-hit" type="button" data-recipe="recipe-kesar-royale"><span class="sr-only">Open the Kesar Royale Eggless Cookie recipe</span></button>
+              <img src="assets/images/recipe-signature-vanilla-bean-cheesecake.jpg" alt="Eggless gelatine-free vanilla bean cheesecake slice with raspberry coulis, fresh raspberries and lemon zest">
+              <div class="archive-recipe-copy"><small>Vanilla bean &middot; Raspberry coulis</small><h3>Signature Vanilla Bean Cheesecake</h3><span>Read full recipe</span></div>
+              <button class="recipe-hit" type="button" data-recipe="recipe-signature-vanilla-bean-cheesecake"><span class="sr-only">Open the Signature Vanilla Bean Cheesecake recipe</span></button>
+            </article>
+
+            <article class="archive-recipe">
+              <img src="assets/images/recipe-saffron-royale.jpg" alt="Eggless saffron royale cookie with brown butter, saffron and cashew praline, topped with white couverture and saffron strands">
+              <div class="archive-recipe-copy"><small>Saffron &amp; cashew praline</small><h3>Saffron Royale Eggless Cookie</h3><span>Read full recipe</span></div>
+              <button class="recipe-hit" type="button" data-recipe="recipe-saffron-royale"><span class="sr-only">Open the Saffron Royale Eggless Cookie recipe</span></button>
             </article>
 
             <article class="archive-recipe">
@@ -1001,14 +1014,108 @@ html,body{overflow-x:clip}
         <div id="recipeReaderContent"></div>
       </div>
     </dialog>
-    <template id="recipe-template-recipe-kesar-royale">
+    <template id="recipe-template-recipe-signature-vanilla-bean-cheesecake">
       <article class="recipe-page">
         <header class="recipe-page-hero">
-          <div><small>Eggless &middot; Kesar Royale &middot; Brown butter, saffron &amp; cashew praline</small><h2>Kesar Royale Eggless Cookie</h2><p>Deeply nutty brown butter, fragrant saffron and green cardamom, roasted cashews, crisp cashew-praline shards and pockets of white couverture. The ideal cookie has a tender centre and delicately golden edges.</p></div>
+          <div><small>Eggless &middot; Gelatine-free &middot; Vanilla bean</small><h2>Signature Vanilla Bean Cheesecake</h2><p>A compact yet silky vanilla-bean filling, delicate tang from sour cream and lemon, and a crisp almond-biscuit base. Finished with a thin, separate sour-cream layer for a clean, elegant slice.</p></div>
         </header>
-        <div class="recipe-sheet" id="recipe-kesar-royale">
+        <div class="recipe-sheet" id="recipe-signature-vanilla-bean-cheesecake">
 <div class="rkicker">New recipe</div>
-<h3>Kesar Royale Eggless Cookie</h3>
+<h3>Signature Vanilla Bean Cheesecake</h3>
+<p class="rtag">This baked cheesecake is completely eggless and gelatine-free. It is structured with cornflour and controlled heat. Use full-fat block cream cheese and thick sour cream; spreadable or low-fat products can introduce excess moisture.</p>
+<div class="recipe-spec">
+<div><strong>Yield</strong>20 cm cheesecake, 10&ndash;12 slices</div>
+<div><strong>Oven</strong>160&deg;C conventional / 150&deg;C fan</div>
+<div><strong>Chill</strong>8&ndash;12 hours, refrigerated</div>
+<div><strong>Bake time</strong>65&ndash;85 minutes</div>
+</div>
+<p><strong>Equipment.</strong> 20 cm springform tin, baking parchment, heavy-duty aluminium foil, deep roasting tray, digital scale, bowls, manual balloon whisk, flexible silicone spatula, fine sieve, offset spatula, kettle, cooling rack, long thin knife and clean towel. No electric mixer is required.</p>
+<p><strong>Before starting.</strong> Bring cream cheese, mascarpone, sour cream and heavy cream to approximately 20&ndash;22&deg;C. The cream cheese should be soft but not melted. Preheat the oven to 160&deg;C conventional or 150&deg;C fan; position a rack in the lower-middle part of the oven.</p>
+<h4>Ingredients &mdash; almond biscuit base</h4>
+<table class="ing-table">
+<tr><td>Digestive biscuits, finely crushed</td><td>180 g</td></tr>
+<tr><td>Roasted almonds, finely ground</td><td>35 g</td></tr>
+<tr><td>Unsalted butter, melted</td><td>85 g</td></tr>
+<tr><td>Caster sugar</td><td>15 g</td></tr>
+<tr><td>Fine sea salt</td><td>1 g</td></tr>
+<tr><td>Ground cinnamon</td><td>0.5 g</td></tr>
+</table>
+<h4>Ingredients &mdash; vanilla cheesecake filling</h4>
+<table class="ing-table">
+<tr><td>Full-fat block cream cheese, softened to 20&ndash;22&deg;C</td><td>600 g</td></tr>
+<tr><td>Mascarpone, softened to 20&ndash;22&deg;C</td><td>100 g</td></tr>
+<tr><td>Caster sugar</td><td>150 g</td></tr>
+<tr><td>Thick sour cream, room temperature</td><td>150 g</td></tr>
+<tr><td>Heavy cream (35% fat), room temperature</td><td>100 g</td></tr>
+<tr><td>Cornflour, sieved</td><td>24 g</td></tr>
+<tr><td>Full-fat milk powder, sieved with cornflour</td><td>12 g</td></tr>
+<tr><td>Vanilla bean paste</td><td>8 g</td></tr>
+<tr><td>Lemon zest, finely grated</td><td>1.5 g</td></tr>
+<tr><td>Fresh lemon juice, add last</td><td>8 g</td></tr>
+<tr><td>Fine sea salt</td><td>1.5 g</td></tr>
+</table>
+<h4>Ingredients &mdash; sour-cream finishing layer</h4>
+<table class="ing-table">
+<tr><td>Thick sour cream</td><td>120 g</td></tr>
+<tr><td>Icing sugar</td><td>15 g</td></tr>
+<tr><td>Vanilla bean paste</td><td>2 g</td></tr>
+<tr><td>Fresh lemon juice</td><td>2 g</td></tr>
+</table>
+<h4>Method</h4>
+<ol>
+<li><strong>Prepare the tin.</strong> Line the base of a 20 cm springform tin with baking parchment. Lightly grease the sides if needed.</li>
+<li><strong>Make the biscuit base.</strong> Crush digestive biscuits into fine, even crumbs. Combine with ground roasted almonds, caster sugar, salt and cinnamon. Add melted butter and mix until the crumbs resemble damp sand and hold together when pressed.</li>
+<li><strong>Compact and pre-bake.</strong> Transfer crumbs to the tin. Distribute evenly and compact firmly with the flat bottom of a glass or measuring cup. Bake at 170&deg;C conventional for about 10 minutes. Cool completely.</li>
+<li><strong>Smooth the cream cheese by hand.</strong> Place softened cream cheese in a large bowl. Using a manual balloon whisk, press and work the mixture against the side of the bowl to remove lumps. Add mascarpone and whisk gently until smooth. Do not whip vigorously or incorporate excess air.</li>
+<li><strong>Add sugar and dry ingredients.</strong> Add caster sugar gradually while whisking gently. Sieve cornflour, milk powder and salt together. Add in two additions, whisking only until incorporated. Scrape the bowl with a silicone spatula.</li>
+<li><strong>Complete the filling.</strong> Add sour cream and mix gently. Pour in heavy cream in a thin stream while whisking slowly. Add vanilla and lemon zest. Add lemon juice last and mix briefly. The batter should be thick, glossy, pale ivory and lump-free.</li>
+<li><strong>Fill the tin.</strong> Pour the filling over the cooled biscuit base. Scrape the bowl with a silicone spatula. Tap the tin gently once or twice to release larger air pockets. Smooth the top with an offset spatula.</li>
+<li><strong>Wrap for the water bath.</strong> Wrap the outside bottom and sides of the springform tin with two overlapping layers of heavy-duty foil. Press the foil closely around the tin and keep its top edge above the expected waterline.</li>
+<li><strong>Set up the water bath.</strong> Place the foil-wrapped tin inside a deep roasting tray. Put the tray on the oven rack, then carefully pour hot water into the roasting tray around the cake tin until it reaches approximately halfway up the tin's sides. Do not splash water into the cheesecake.</li>
+<li><strong>Bake gently.</strong> Bake at 160&deg;C conventional or 150&deg;C fan for approximately 65&ndash;85 minutes. The outer 3&ndash;4 cm should look set; the centre should retain a gentle wobble when the tin is nudged. The surface should be pale ivory to lightly golden. Do not bake until the centre is completely firm.</li>
+<li><strong>Cool gradually.</strong> Switch off the oven and leave the cheesecake inside with the door slightly ajar for about 45 minutes. Remove the tray carefully, lift the cheesecake from the water bath and remove the foil. Cool at room temperature for a further 60&ndash;90 minutes. Do not refrigerate while hot.</li>
+<li><strong>Refrigerate to set.</strong> Once cooled, cover without letting the cover touch the surface. Refrigerate for at least 8&ndash;12 hours, preferably overnight. This resting period is essential for a cleanly sliceable texture.</li>
+<li><strong>Make the sour-cream finish.</strong> Whisk 120 g sour cream, icing sugar, vanilla and 2 g lemon juice by hand until smooth. Spread a thin, even 2&ndash;3 mm layer over the fully chilled cheesecake with an offset spatula. Refrigerate for another 30&ndash;45 minutes.</li>
+<li><strong>Release and slice.</strong> Run a thin knife, warmed in hot water and wiped completely dry, around the inside edge of the tin. Release the ring. For clean portions, dip a long thin knife in hot water, wipe dry, make one decisive cut, then wipe the blade before every subsequent cut. Lift slices with a cake server.</li>
+</ol>
+<h4>Professional checkpoints</h4>
+<ul>
+<li><strong>Cream cheese:</strong> smooth and lump-free after gentle hand-whisking. Avoid cold cheese, vigorous whipping or foam.</li>
+<li><strong>Batter:</strong> thick, glossy, pale ivory; falls from whisk in a slow ribbon. Avoid thin, bubbly or over-aerated batter.</li>
+<li><strong>Water bath:</strong> hot water visibly surrounds foil-wrapped tin halfway up its sides. Avoid dry tray, water inside cake tin or poorly wrapped foil.</li>
+<li><strong>Doneness:</strong> set outer ring with a gentle central wobble. Avoid liquid centre or completely rigid centre.</li>
+<li><strong>Cooling:</strong> oven cooling, then room-temperature cooling, then refrigeration. Avoid putting a hot cheesecake straight into the fridge.</li>
+<li><strong>Slicing:</strong> warm, dry, clean knife; wipe between cuts. Avoid cold or cream-coated blade dragging through filling.</li>
+</ul>
+<h4>Troubleshooting</h4>
+<ul>
+<li><strong>Cracked top:</strong> overbaking, high heat or abrupt cooling. Use water bath, check gentle wobble and cool gradually.</li>
+<li><strong>Lumpy filling:</strong> cream cheese too cold or insufficient smoothing. Bring dairy to 20&ndash;22&deg;C and work against bowl with whisk.</li>
+<li><strong>Soft set:</strong> high-moisture dairy or inadequate chilling. Use block cream cheese and thick sour cream; chill overnight.</li>
+<li><strong>Rubbery texture:</strong> excess starch or overbaking. Weigh cornflour precisely; avoid baking until fully firm.</li>
+<li><strong>Soggy base:</strong> water leaked into tin or base underbaked. Use overlapping foil; avoid splashing; cool base before filling.</li>
+<li><strong>Messy slices:</strong> insufficient chilling or dirty knife. Chill fully and wipe warm, dry knife between cuts.</li>
+</ul>
+<h4>Storage and serving</h4>
+<ul>
+<li>Serve chilled but not ice-cold. Allow each slice to stand for about 10 minutes at room temperature before serving. A small raspberry coulis brushstroke, a few fresh raspberries and fine lemon zest are sufficient.</li>
+<li>Keep covered at 0&ndash;4&deg;C. For best eating quality, consume within 3&ndash;4 days. Do not leave at room temperature for extended periods.</li>
+<li>Freeze well-wrapped individual slices for up to one month for best quality; thaw overnight in the refrigerator.</li>
+<li>For commercial sale, validate shelf life under the actual recipe, packaging, handling and storage conditions &mdash; these are practical kitchen guidelines, not a validated food-safety study.</li>
+</ul>
+<p class="rsign">Curly Chef standard: eggless &middot; gelatine-free &middot; vanilla bean</p>
+<p style="margin-top:16px"><a class="button secondary" href="assets/recipes/signature-vanilla-bean-cheesecake.pdf" target="_blank" rel="noopener">Download PDF</a></p>
+</div>
+      </article>
+    </template>
+    <template id="recipe-template-recipe-saffron-royale">
+      <article class="recipe-page">
+        <header class="recipe-page-hero">
+          <div><small>Eggless &middot; Saffron Royale &middot; Brown butter &amp; cashew praline</small><h2>Saffron Royale Eggless Cookie</h2><p>Deeply nutty brown butter, fragrant saffron and green cardamom, roasted cashews, crisp cashew-praline shards and pockets of white couverture. The ideal cookie has a tender centre and delicately golden edges.</p></div>
+        </header>
+        <div class="recipe-sheet" id="recipe-saffron-royale">
+<div class="rkicker">New recipe</div>
+<h3>Saffron Royale Eggless Cookie</h3>
 <p class="rtag">This cookie is completely eggless. Use thick, strained full-fat Greek yoghurt and good-quality white couverture. Weigh ingredients accurately for consistent results.</p>
 <div class="recipe-spec">
 <div><strong>Yield</strong>12 cookies, 58&ndash;60 g each</div>
@@ -1076,7 +1183,7 @@ html,body{overflow-x:clip}
 <li>Serve at room temperature or warm briefly. A tiny pinch of flaky sea salt on the warm surface can sharpen the sweetness. Pair with espresso, lightly brewed black tea or saffron-infused milk.</li>
 </ul>
 <p class="rsign">Curly Chef standard: eggless &middot; brown butter &middot; saffron &amp; cashew praline</p>
-<p style="margin-top:16px"><a class="button secondary" href="assets/recipes/kesar-royale.pdf" target="_blank" rel="noopener">Download PDF</a></p>
+<p style="margin-top:16px"><a class="button secondary" href="assets/recipes/saffron-royale.pdf" target="_blank" rel="noopener">Download PDF</a></p>
 </div>
       </article>
     </template>
