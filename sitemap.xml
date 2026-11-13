@@ -1,4 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!-- DRAFT ONLY — prepared 2026-11-12. NOT deployed. Supersedes sitemap-CORRECTED-2026-11-11.xml (17 URLs). -->
+<!-- Adds 2 URLs vs the 2026-11-11 draft: eggless-nutella-chocolate-lava-cakes.pdf (new recipe, staged in lava-cakes-deploy/new-index.html) and best-eggless-baking-2027.html (standalone page, staged in 2027-page-deploy/). Total 19 URLs. -->
+<!-- DO NOT DEPLOY until BOTH the lava-cakes and 2027-page deploys are confirmed live on a fresh load, then verify EVERY URL below returns HTTP 200 fresh. Deploy route: fetch current live index first; never ship v4-live wholesale. Then resubmit in Search Console. Sitemap decision is separate from the 2026-11-12 deploy task, which was told NOT to touch the sitemap. -->
+<!-- NOT ADDED (no site PDF exists yet; do not invent a URL): Caramelised Banana & Oat Cookies — PDF received 2026-11-12 but no photo sent, upload on hold. Also unchanged: the 6 Drive-only grid recipes (Snickerdoodle, Gourmet Chocolate Mousse, Sticky Toffee Pudding, Saffron Milk Cake, Dark Chocolate Tiffin, Chocolate Candle Cake) and cinnamon rolls (no live card). -->
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://thecurlychef.pages.dev/</loc>
@@ -6,7 +10,82 @@
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://thecurlychef.pages.dev/assets/recipes/eggless-cinnamon-rolls.pdf</loc>
+    <loc>https://thecurlychef.pages.dev/best-eggless-baking-2027.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://thecurlychef.pages.dev/assets/recipes/eggless-nutella-chocolate-lava-cakes.pdf</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://thecurlychef.pages.dev/assets/recipes/eggless-gourmet-nutella-brownies.pdf</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://thecurlychef.pages.dev/assets/recipes/signature-vanilla-bean-cheesecake.pdf</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://thecurlychef.pages.dev/assets/recipes/saffron-royale.pdf</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://thecurlychef.pages.dev/assets/recipes/brown-butter-sable.pdf</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://thecurlychef.pages.dev/assets/recipes/high-protein-peanut-butter-cookies.pdf</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://thecurlychef.pages.dev/assets/recipes/coffee-walnut-tea-cake.pdf</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://thecurlychef.pages.dev/assets/recipes/chocolate-strawberry-mousse.pdf</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://thecurlychef.pages.dev/assets/recipes/molten-chocolate-cookie-sundae.pdf</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://thecurlychef.pages.dev/assets/recipes/dark-chocolate-cake.pdf</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://thecurlychef.pages.dev/assets/recipes/three-milk-tres-leches.pdf</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://thecurlychef.pages.dev/assets/recipes/choc-chunk-cookie-pie.pdf</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://thecurlychef.pages.dev/assets/recipes/brown-butter-chocolate-chunk-cookies.pdf</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://thecurlychef.pages.dev/assets/recipes/eggless-gourmet-cookie-sticks.pdf</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://thecurlychef.pages.dev/assets/recipes/eggless-chocolate-tres-leches.pdf</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
